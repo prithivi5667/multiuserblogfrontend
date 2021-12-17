@@ -24,8 +24,8 @@ const SigninComponent = () => {
     setValues({ ...values, loading: true, error: false, showForm: false });
     const user = { email, password };
     signin(user).then((data) => {
-      if (data.error) {
-        setValues({ ...values, error: data.error });
+      if (error) {
+        setValues({ ...values, error: error });
       } else {
         authenticate(data, () => {
           if (isAuth() && isAuth().role === 1) {
