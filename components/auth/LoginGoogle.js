@@ -25,7 +25,7 @@ export default function LoginGoogle() {
   return (
     <div className="pb-3">
       <GoogleLogin
-        clientId={`${GOOGLE_CLIENT_ID}`}
+        clientId='1038422740198-93tppd5fa15pridlk0445usaldanppb7.apps.googleusercontent.com'
         buttonText="Login with Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
