@@ -6,8 +6,13 @@ import { useRouter } from 'next/router';
 
 export default function LoginGoogle() {
   const router = useRouter();
+  const responseFail = (response) =>
+  {
+    console.log("Fail to contact Google...")
+  }
   const responseGoogle = (response) => {
     const { tokenId } = response;
+    console.log(response)
     loginWithGoogle({ tokenId }).then((data) => {
       if (data.error) {
         console.log(data.error);
