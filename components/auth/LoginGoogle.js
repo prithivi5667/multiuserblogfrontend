@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
-import { GOOGLE_CLIENT_ID } from '../../config';
+//import { GOOGLE_CLIENT_ID } from '../../config';
 import { loginWithGoogle, authenticate, isAuth } from '../../actions/auth';
 import { useRouter } from 'next/router';
 
@@ -25,7 +25,7 @@ export default function LoginGoogle() {
   return (
     <div className="pb-3">
       <GoogleLogin
-        clientId='1038422740198-93tppd5fa15pridlk0445usaldanppb7.apps.googleusercontent.com'
+        clientId="1038422740198-93tppd5fa15pridlk0445usaldanppb7.apps.googleusercontent.com"
         buttonText="Login with Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
