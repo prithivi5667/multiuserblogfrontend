@@ -29,6 +29,7 @@ export default function LoginGoogle() {
         buttonText="Login with Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
+        isSignedIn={true}
       />
     </div>
   );
