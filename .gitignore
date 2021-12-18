@@ -1,7 +1,5 @@
 // .gitnignore
 # next.js build output
 .next
-next.config.js
-
 node_modules/
 
