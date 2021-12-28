@@ -1,48 +1,60 @@
-import fetch from 'isomorphic-fetch';
-import { API } from '../config';
-import { handleResponse } from './auth';
+import fetch from "isomorphic-fetch";
+import { API } from "../config";
+import { handleResponse } from "./auth";
 
+// Create Category Method
 export const create = (category, token) => {
   return fetch(`${API}/category`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(category),
   })
-    .then((res) => {
-      handleResponse(res);
-      return res.json();
+    .then((response) => {
+      handleResponse(response);
+      return response.json();
     })
-    .catch((err) => console.log(err));
+    .catch((error) => console.log(error));
 };
 
+// Get Category Method
 export const getCategories = () => {
-  return fetch(`${API}/categories`, { method: 'GET' })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+  return fetch(`${API}/categories`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => console.log(error));
 };
 
+// Get Single Category Method
 export const singleCategory = (slug) => {
-  return fetch(`${API}/category/${slug}`, { method: 'GET' })
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
+  return fetch(`${API}/category/${slug}`, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((error) => console.log(error));
 };
 
+// Remove Category Method
 export const removeCategory = (slug, token) => {
   return fetch(`${API}/category/${slug}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
   })
-    .then((res) => {
-      handleResponse(res);
-      return res.json();
+    .then((response) => {
+      handleResponse(response);
+      return response.json();
     })
-    .catch((err) => console.log(err));
+    .catch((error) => console.log(error));
 };

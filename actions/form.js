@@ -1,10 +1,9 @@
-import fetch from 'isomorphic-fetch';
-import { API } from '../config';
-import queryString from 'querystring';
-import { isAuth, handleResponse } from './auth';
+import fetch from "isomorphic-fetch";
+import { API } from "../config";
 
 export const emailContactForm = (data) => {
   let emailEndpoint;
+
   if (data.authorEmail) {
     emailEndpoint = `${API}/contact-blog-author`;
   } else {
@@ -12,13 +11,15 @@ export const emailContactForm = (data) => {
   }
 
   return fetch(`${emailEndpoint}`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   })
-    .then((res) => res.json())
+    .then((response) => {
+      return response.json();
+    })
     .catch((err) => console.log(err));
 };

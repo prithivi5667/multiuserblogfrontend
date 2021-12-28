@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react';
-import { isAuth } from '../../actions/auth';
-import Router from 'next/router';
+import { useEffect } from "react";
+import Router from "next/router";
+import { isAuth } from "../../actions/auth";
 
-export default function Admin({ children }) {
+const Admin = ({ children }) => {
   useEffect(() => {
     if (!isAuth()) {
       Router.push(`/signin`);
     } else if (isAuth().role !== 1) {
-      Router.push('/');
+      Router.push(`/`);
     }
   }, []);
   return <>{children}</>;
-}
+};
+
+export default Admin;

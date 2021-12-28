@@ -1,51 +1,84 @@
-import React, { useState } from 'react';
-import { listSearch } from '../../actions/blog';
-import Link from 'next/link';
-export default function Search() {
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { listSearch } from "../../actions/blog";
+
+const Search = () => {
   const [values, setValues] = useState({
     search: undefined,
-    result: [],
+    results: [],
     searched: false,
-    message: '',
+    message: "",
   });
-  const { search, result, searched, message } = values;
+
+  const { search, results, searched, message } = values;
+
   const searchSubmit = (e) => {
     e.preventDefault();
     listSearch({ search }).then((data) => {
       setValues({
         ...values,
-        result: data,
+        results: data,
         searched: true,
-        message: `${data.length || 0} blogs found`,
+        message: `${data.length} blogs found`,
       });
     });
   };
+
   const handleChange = (e) => {
-    setValues({ ...values, search: e.target.value, searched: false, result: [] });
+    setValues({
+      ...values,
+      search: e.target.value,
+      searched: false,
+      results: [],
+    });
   };
-  const searchedBlogs = (results = []) => {
+
+  const searchBlogs = (results = []) => {
     return (
-      <div className="jumbotron bg-white">
-        {message && <p className="pt-4 text-muted form-italic">{message}</p>}
-        {results.map((blog, i) => (
-          <div key={i}>
-            <Link href={`/blogs/${blog.slug}`}>
-              <a className="text-primary">{blog.title}</a>
-            </Link>
-          </div>
+      <ul className="search__list-group">
+        {results.map((blog) => (
+          <Link
+            href={`/blogs/${blog.slug}`}
+            key={blog._id}
+            className="search__link"
+          >
+            <a className="search__link">
+              <li className="search__list-group-item" key={blog._id}>
+                {blog.title}
+              </li>
+            </a>
+          </Link>
         ))}
-      </div>
+        {message ? (
+          <li className="search__list-group-item search__list-group-item__message">
+            {message}
+          </li>
+        ) : null}
+      </ul>
+      // <div className="jumbotron bg-white">
+      //   {message && <p className="pt-4 text-muted font-italic">{message}</p>}
+
+      //   {results.map((blog, i) => {
+      //     return (
+      //       <div key={i}>
+      //         <Link href={`/blogs/${blog.slug}`}>
+      //           <a className="text-primary">{blog.title}</a>
+      //         </Link>
+      //       </div>
+      //     );
+      //   })}
+      // </div>
     );
   };
 
   const searchForm = () => (
-    <form onSubmit={searchSubmit}>
-      <div className="row">
+    <form onSubmit={searchSubmit} className="search">
+      {/* <div className="row">
         <div className="col-md-8">
           <input
             type="search"
             className="form-control"
-            placeholder="Search blogs"
+            placeholder="Search..."
             onChange={handleChange}
           />
         </div>
@@ -54,15 +87,41 @@ export default function Search() {
             Search
           </button>
         </div>
-      </div>
+      </div> */}
+      <input
+        type="search"
+        className="search__input-bar"
+        placeholder="Search ..."
+        onChange={handleChange}
+      />
+      {/* <div class="input-group-append">
+          <button className="btn btn-outline-secondary" type="submit">
+            Search
+          </button>
+        </div> */}
     </form>
   );
+
   return (
-    <div className="container-fluid">
-      <div className="pt-3 pb-5">{searchForm()}</div>
-      {searched && !result.error && (
-        <div style={{ marginTop: '-120px', marginBottom: '-80px' }}>{searchedBlogs(result)}</div>
-      )}
-    </div>
+    <form onSubmit={searchSubmit} className="search">
+      <input
+        type="search"
+        className="search__input-bar"
+        placeholder="Search ..."
+        onChange={handleChange}
+      />
+      {searched && searchBlogs(results)}
+    </form>
+
+    // <div className="container-fluid">
+    //   {searchForm()}
+    //   {searched && (
+    //     <div style={{ marginTop: "-120px", marginBottom: "-80px" }}>
+    //       {searchBlogs(results)}
+    //     </div>
+    //   )}
+    // </div>
   );
-}
+};
+
+export default Search;

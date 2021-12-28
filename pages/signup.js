@@ -1,15 +1,10 @@
-import Layout from '../components/Layout';
-import Link from 'next/link';
-import SignupComponent from '../components/auth/SignupComponent';
+import SignupComponent2 from "../components/auth/SignupComponent2";
+import Layout from "../components/Layout";
 
-const Signup = () => (
+const SignupPage = () => (
   <Layout>
-    <h2 className="text-center pt-4 pb-4">Signup</h2>
-    <div className="row">
-      <div className="col-md-6 offset-md-3">
-        <SignupComponent />
-      </div>
-    </div>
+    <SignupComponent2 />
   </Layout>
 );
-export default Signup;
+
+export default SignupPage;

@@ -4,7 +4,7 @@ module.exports = {
         APP_NAME: 'SEOBLOG',
         API_DEVELOPMENT: 'http://localhost:8000/api',
         API_PRODUCTION: 'https://blogbackendpt.herokuapp.com/api',
-        PRODUCTION: true,
+        PRODUCTION: false,
         DOMAIN_DEVELOPMENT: 'http://localhost:3000',
         DOMAIN_PRODUCTION: 'https://unruffled-mestorf-354238.netlify.app',
         FB_APP_ID: 1344095629356238,
