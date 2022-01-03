@@ -121,7 +121,7 @@ const ContactForm = ({ authorEmail }) => {
                   src="images/social-icons/facebook.svg"
                   alt=""
                 />{" "}
-                <span>/blognet.com</span>
+                <span>/blog</span>
               </a>
             </li>
             <li>
@@ -134,7 +134,7 @@ const ContactForm = ({ authorEmail }) => {
                   src="images/social-icons/twitter.svg"
                   alt=""
                 />
-                <span>@blognet</span>
+                <span>@blog</span>
               </a>
             </li>
             <li>
@@ -147,7 +147,7 @@ const ContactForm = ({ authorEmail }) => {
                   src="images/social-icons/linkedin.svg"
                   alt=""
                 />
-                <span>blognet-com</span>
+                <span>blog</span>
               </a>
             </li>
             <li>
@@ -160,7 +160,7 @@ const ContactForm = ({ authorEmail }) => {
                   src="images/social-icons/email.svg"
                   alt=""
                 />
-                <span>@blognet.com</span>
+                <span>blog</span>
               </a>
             </li>
           </ul>
