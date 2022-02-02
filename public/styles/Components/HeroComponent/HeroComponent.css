@@ -15,7 +15,11 @@
 	text-align: center;
 	padding: 10rem 0;
 }
-
+.slider-bg{
+	width: auto;
+	height: 50%;
+	object-fit:cover;
+}
 @media only screen and (max-width: 550px) {
 	.hero__title {
 		font-size: 4.5rem;
