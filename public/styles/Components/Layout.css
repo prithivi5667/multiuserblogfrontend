@@ -162,6 +162,7 @@ p {
 		)
 		[center-end] minmax(6rem, 1fr) [full-end];
     min-height: 80vh;
+	background-color: teal;
 }
 
 
