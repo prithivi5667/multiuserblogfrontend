@@ -1,9 +1,9 @@
 .footer {
-	margin-top: 6rem;
+	margin-top: 5rem;
 	width: 100%;
 	padding: 3rem 0;
 	border-top: 0.2rem solid var(--mainGrey);
-	background-color: var(--offWhite);
+	background-color: rgb(63, 55, 55);
 }
 
 .footer__copyright {
@@ -12,6 +12,7 @@
 
 .footer__copyright p {
 	font-size: 1.4rem;
+	color: rgb(240, 227, 227);
 }
 
 .footer__text-and-author {
