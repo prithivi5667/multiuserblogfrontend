@@ -1,13 +1,48 @@
 .hero-container {
 	grid-column: center-start / center-end;
+background-color: dimgray;
 }
 
 @media only screen and (max-width: 550px) {
 	.hero-container {
 		grid-column: full-start / full-end;
+		background-color: aquamarine;
+		background-image: url("https://images.pexels.com/photos/1040499/pexels-photo-1040499.jpeg?cs=srgb&dl=pexels-oleg-magni-1040499.jpg&fm=jpg");
+		margin-bottom: 10px;
 	}
 }
+.slider-bg{
+	background-image: url("https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?cs=srgb&dl=pexels-johannes-plenio-1103970.jpg&fm=jpg");
+	width: auto;
+	height: 50%;
+	object-fit:cover;
+	
+}
+.mainfoot{
+	margin-top: 300px;
+	margin-left: 85%;
+	
+	
+}
+.btn1{
+	color: blue;
+	background-image: url("https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?cs=srgb&dl=pexels-fwstudio-129731.jpg&fm=jpg");
 
+	
+	border-radius: 10%;
+	padding: 8px;
+	border: 1px solid rgb(42, 12, 153);
+	font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: medium;
+	font-style: italic;
+	cursor: pointer;
+}
+.para1{
+	margin-left: 50px;
+	color: rgb(231, 216, 216);
+	margin-bottom: 10px;
+	
+}
 .hero__title {
 	line-height: 8.5rem;
 	font-size: 8.5rem;
@@ -15,11 +50,7 @@
 	text-align: center;
 	padding: 10rem 0;
 }
-.slider-bg{
-	width: auto;
-	height: 50%;
-	object-fit:cover;
-}
+
 @media only screen and (max-width: 550px) {
 	.hero__title {
 		font-size: 4.5rem;
