@@ -18,7 +18,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: var(--mainWhite);
+	background-color: rgb(71, 97, 241);
 	border-bottom: 0.1rem solid var(--mainGrey);
 	height: 66px;
 	z-index: 1000;
@@ -78,7 +78,7 @@
 
 .toolbar .toolbar_navigation-items ul a {
 	font-family: "Nunito", sans-serif;
-	color: var(--darkGrey);
+	color: whitesmoke;
 	position: relative;
 	letter-spacing: 1.2px;
 	font-size: 1.6rem;
@@ -88,7 +88,7 @@
 }
 
 .toolbar .toolbar_navigation-items ul a:hover, .toolbar .toolbar_navigation-items ul a:active {
-	color: var(--primaryColor);
+	color:rgb(26, 209, 50);
 	text-shadow: -1px 3px 2px var(--primaryColorLight);
 }
 
